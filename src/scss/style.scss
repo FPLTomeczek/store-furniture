@@ -1,0 +1,60 @@
+$max-width: 1100px;
+$main-color: #e4d9d4;
+$secondary-color: saddlebrown;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 128px;
+  height: 128px;
+}
+
+section {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.btn-primary {
+  font-size: 1.5rem;
+  background: rgb(35, 35, 32);
+  font-weight: 700;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  width: 10rem;
+}
+.btn-primary:hover {
+  color: rgb(35, 35, 32);
+  background: white;
+  cursor: pointer;
+}
+
+nav {
+  background-color: $main-color;
+  section {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style-type: none;
+    }
+    li {
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    li:hover {
+      cursor: pointer;
+      color: $secondary-color;
+    }
+  }
+  border-bottom: 2px solid $secondary-color;
+}
+
+@import "./home-page.scss";
