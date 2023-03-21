@@ -43,7 +43,7 @@ section {
   border: none;
   color: white;
   text-transform: uppercase;
-  width: 10rem;
+  min-width: 10rem;
 }
 .btn-primary:hover {
   color: rgb(35, 35, 32);
@@ -77,3 +77,4 @@ nav {
 
 @import "./_home-page.scss";
 @import "./_products-page.scss";
+@import "./_single-product-page.scss";
