@@ -1,32 +1,42 @@
-import React, { useState } from "react";
-import {
-  BsFillArrowLeftCircleFill,
-  BsFillArrowRightCircleFill,
-} from "react-icons/bs";
-import { IconContext } from "react-icons/lib";
+import React from "react";
 import products from "../data";
 import Product from "./Product";
 
 const Slider = () => {
-  const [lastItem, setLastItem] = useState(5);
-  console.log(products);
+  let gapSize = 65;
+
+  const slideLeft = () => {
+    let width = document
+      .getElementById("product-0")
+      .getBoundingClientRect().width;
+    let slider = document.getElementById("slider");
+    slider.scrollLeft = slider.scrollLeft - width - gapSize;
+  };
+
+  const slideRight = () => {
+    let slider = document.getElementById("slider");
+    let width = document
+      .getElementById("product-0")
+      .getBoundingClientRect().width;
+    slider.scrollLeft = slider.scrollLeft + width + gapSize;
+  };
   return (
     <div className="slider">
       <h1>TOP SELLED PRODUCTS</h1>
       <div className="slider-products">
-        <IconContext.Provider value={{ size: "60px" }}>
-          <BsFillArrowLeftCircleFill />
-        </IconContext.Provider>
+        <div className="btn" onClick={slideLeft}>
+          <i className="fa-solid fa-arrow-left"></i>
+        </div>
         <section>
-          <div className="products">
-            {products.slice(lastItem - 5, lastItem).map((product) => {
-              return <Product product={product} />;
+          <div className="products" id="slider">
+            {products.map((product, index) => {
+              return <Product product={product} key={index} ind={index} />;
             })}
           </div>
         </section>
-        <IconContext.Provider value={{ size: "60px" }}>
-          <BsFillArrowRightCircleFill />
-        </IconContext.Provider>
+        <div className="btn" onClick={slideRight}>
+          <i className="fa-solid fa-arrow-right"></i>
+        </div>
       </div>
     </div>
   );

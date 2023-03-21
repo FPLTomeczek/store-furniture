@@ -1,13 +1,18 @@
 import React from "react";
 import logo from "../images/logos/mammonous-logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav>
       <section>
-        <img src={logo} alt="logo" className="logo" />
+        <Link to="/">
+          <img src={logo} alt="logo" className="logo" />
+        </Link>
         <ul>
-          <li>Products</li>
+          <Link to="/products">
+            <li>Products</li>
+          </Link>
           <li>Shop</li>
         </ul>
       </section>
