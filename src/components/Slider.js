@@ -30,7 +30,14 @@ const Slider = () => {
         <section>
           <div className="products" id="slider">
             {products.map((product, index) => {
-              return <Product product={product} key={index} ind={index} />;
+              return (
+                <Product
+                  product={product}
+                  key={index}
+                  ind={index}
+                  page="home"
+                />
+              );
             })}
           </div>
         </section>

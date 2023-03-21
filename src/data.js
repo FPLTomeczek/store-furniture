@@ -31,7 +31,7 @@ const data = [
   {
     image: brown_sofa,
     name: "Brown Sofa",
-    price: 1299999,
+    price: 129999,
     type: "sofa",
   },
   {

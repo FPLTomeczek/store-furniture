@@ -1,0 +1,74 @@
+.header-filters {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+  .range-price {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .range-price > h3 {
+    position: absolute;
+    left: 150px;
+  }
+}
+input[type="text"] {
+  border: 2px solid black;
+  padding: 0.5rem;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: 2px solid $secondary-color;
+  background-color: $main-color;
+}
+
+.filter-btns {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  .active {
+    background-color: $main-color;
+  }
+}
+.filter-btn {
+  border: 2px solid black;
+  background-color: white;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.filter-btn:hover {
+  border: 2px solid $secondary-color;
+}
+
+.all-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 2rem;
+  padding: 2rem 0;
+  .product {
+    border: 4px solid $main-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    h3 {
+      font-weight: 400;
+      font-size: 1rem;
+    }
+    span {
+      font-weight: 700;
+    }
+  }
+  .product:hover {
+    border: 4px solid $secondary-color;
+    cursor: pointer;
+  }
+  img {
+    width: 256px;
+    height: 256px;
+    // border-radius: 1rem;
+  }
+}

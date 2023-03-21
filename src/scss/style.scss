@@ -13,6 +13,19 @@ a {
   color: black;
 }
 
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: #e4d9d4;
+  height: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 8px;
+  background: saddlebrown;
+}
 .logo {
   width: 128px;
   height: 128px;
@@ -62,4 +75,5 @@ nav {
   border-bottom: 2px solid $secondary-color;
 }
 
-@import "./home-page.scss";
+@import "./_home-page.scss";
+@import "./_products-page.scss";
