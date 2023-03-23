@@ -1,8 +1,7 @@
 import React from "react";
-import products from "../data";
 import Product from "./Product";
 
-const Slider = () => {
+const Slider = ({ products, page }) => {
   let gapSize = 65;
 
   const slideLeft = () => {
@@ -22,13 +21,24 @@ const Slider = () => {
   };
   return (
     <div className="slider">
-      <h1>TOP SELLED PRODUCTS</h1>
-      <div className="slider-products">
+      <h1>
+        {page === "home-page" ? "TOP SELLED PRODUCTS" : "SIMILAR PRODUCTS"}
+      </h1>
+      <div
+        className={`slider-products ${
+          page === "home-page" ? "home" : "single-product"
+        }`}
+      >
         <div className="btn" onClick={slideLeft}>
           <i className="fa-solid fa-arrow-left"></i>
         </div>
         <section>
-          <div className="products" id="slider">
+          <div
+            className={`products ${
+              page === "home-page" ? "home" : "single-product"
+            }`}
+            id="slider"
+          >
             {products.map((product, index) => {
               return (
                 <Product

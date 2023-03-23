@@ -12,6 +12,7 @@
 
 .single-product-container {
   display: flex;
+  padding: 2rem;
   img {
     max-width: 500px;
   }
@@ -64,6 +65,15 @@
     align-items: center;
     gap: 1rem;
   }
+  .price {
+    margin-left: 10px;
+    font-weight: 700;
+    padding: 0 1rem;
+  }
+}
+
+.single-product {
+  justify-content: center;
 }
 
 .parameters {
@@ -73,9 +83,9 @@
   padding: 1rem 0;
 }
 .parameter {
-  background-color: rgb(245, 245, 245);
-  padding: 0.5rem;
+  background-color: $main-color;
+  padding: 1rem;
   font-size: 1.4rem;
   font-weight: 700;
-  border: 1px solid black;
+  border: 2px solid black;
 }

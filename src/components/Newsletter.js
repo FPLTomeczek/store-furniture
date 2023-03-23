@@ -1,6 +1,9 @@
 import React from "react";
 
 const Newsletter = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="newsletter">
       <h2>Newsletter</h2>
@@ -10,7 +13,11 @@ const Newsletter = () => {
           id="newsletter-email"
           placeholder="Enter your email"
         />
-        <button type="button" className="btn-primary">
+        <button
+          type="submit"
+          className="btn-primary"
+          onClick={(e) => handleSubmit(e)}
+        >
           Subscribe
         </button>
       </form>

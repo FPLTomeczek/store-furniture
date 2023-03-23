@@ -13,7 +13,10 @@ $advertise-container-height: 500px;
     padding: 2rem 0;
     max-height: 630px;
   }
-
+  .loading {
+    display: flex;
+    justify-content: center;
+  }
   .chair-hero {
     grid-area: one;
   }
@@ -51,7 +54,7 @@ $advertise-container-height: 500px;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    box-sizing: border-box;
+    // box-sizing: border-box;
   }
 }
 .advertise-container {
@@ -125,10 +128,10 @@ $advertise-container-height: 500px;
   justify-content: space-between;
   gap: 2rem;
   align-items: center;
-  width: $max-width + 100px;
+  width: $max-width + 200px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 2rem 0;
+  padding-bottom: 2rem;
   section {
     min-width: $max-width;
   }
@@ -146,7 +149,7 @@ $advertise-container-height: 500px;
     overflow-y: hidden;
     scroll-behavior: smooth;
     padding: 1rem 0;
-    justify-content: space-between;
+    // justify-content: space-between;
     .product {
       border: 4px solid $main-color;
       padding: 1rem;
@@ -181,7 +184,7 @@ $advertise-container-height: 500px;
 }
 
 .newsletter {
-  margin-top: 2rem;
+  margin-top: auto;
   background: saddlebrown;
   height: 200px;
   display: flex;

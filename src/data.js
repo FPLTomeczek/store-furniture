@@ -24,7 +24,7 @@ const data = [
     type: "bed",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const data = [
     type: "chair",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
   {
     id: 3,
@@ -44,7 +44,7 @@ const data = [
     type: "sofa",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
   {
     id: 4,
@@ -54,7 +54,7 @@ const data = [
     type: "chair",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
   {
     id: 5,
@@ -64,7 +64,7 @@ const data = [
     type: "bed",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
   {
     id: 6,
@@ -74,7 +74,7 @@ const data = [
     type: "sofa",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
   {
     id: 7,
@@ -84,7 +84,7 @@ const data = [
     type: "fridge",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
   {
     id: 8,
@@ -94,7 +94,7 @@ const data = [
     type: "table",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
   {
     id: 9,
@@ -104,7 +104,7 @@ const data = [
     type: "bath",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
   {
     id: 10,
@@ -114,7 +114,7 @@ const data = [
     type: "bed",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
   {
     id: 11,
@@ -124,7 +124,7 @@ const data = [
     type: "chair",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
   {
     id: 12,
@@ -134,7 +134,7 @@ const data = [
     type: "bath",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
   {
     id: 13,
@@ -144,7 +144,7 @@ const data = [
     type: "table",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
   {
     id: 14,
@@ -154,7 +154,7 @@ const data = [
     type: "chair",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
   {
     id: 15,
@@ -164,7 +164,7 @@ const data = [
     type: "chair",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
   {
     id: 16,
@@ -174,7 +174,7 @@ const data = [
     type: "sofa",
     size: "4x4",
     weight: "15kg",
-    material: "cotton",
+    material: "Cotton",
   },
 ];
 

@@ -1,0 +1,15 @@
+- images fit overall?
+- fonts
+- responsive
+- checkout design
+- data
+
+
+- loading (also images)
+- addToCart info
+- newsletter mail
+
+
+done:
+- error
+- newsletter sticky on bottom

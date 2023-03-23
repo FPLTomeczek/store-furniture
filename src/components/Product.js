@@ -8,7 +8,7 @@ const Product = ({ product, ind, page }) => {
     <Link to={`/products/${id}`}>
       <div className="product" id={`product-${ind}`}>
         <img src={image} alt="product" />
-        {name.length > 12 && page === "home" ? (
+        {name && name.length > 12 && page === "home" ? (
           <h3>{name.substring(0, 9)}..</h3>
         ) : (
           <h3>{name}</h3>

@@ -1,10 +1,35 @@
 $max-width: 1100px;
 $main-color: #e4d9d4;
 $secondary-color: saddlebrown;
+$dark-red: rgb(163, 0, 0);
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.remove-btn {
+  font-size: 1rem;
+  background-color: $dark-red;
+  border: none;
+  padding: 0.5rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.remove-btn:hover {
+  color: $dark-red;
+  background-color: white;
+  border: 1px solid $dark-red;
   box-sizing: border-box;
 }
 
@@ -42,10 +67,12 @@ section {
   font-weight: 700;
   border: none;
   color: white;
+  border: 1px solid rgb(35, 35, 32);
   text-transform: uppercase;
   min-width: 10rem;
 }
 .btn-primary:hover {
+  border: 1px solid rgb(35, 35, 32);
   color: rgb(35, 35, 32);
   background: white;
   cursor: pointer;
@@ -64,8 +91,26 @@ nav {
       list-style-type: none;
     }
     li {
+      position: relative;
       text-transform: uppercase;
       font-weight: 700;
+    }
+    .shop {
+      position: relative;
+      left: 0;
+      z-index: 2;
+    }
+    .number {
+      width: 20px;
+      height: 20px;
+      left: 38px;
+      bottom: 11px;
+      color: white;
+      border-radius: 50%;
+      background-color: $dark-red;
+      position: absolute;
+      z-index: 1;
+      text-align: center;
     }
     li:hover {
       cursor: pointer;
@@ -75,6 +120,38 @@ nav {
   border-bottom: 2px solid $secondary-color;
 }
 
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fed;
+  border-color: #fed transparent #fed transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @import "./_home-page.scss";
 @import "./_products-page.scss";
 @import "./_single-product-page.scss";
+@import "./_shop-page.scss";
