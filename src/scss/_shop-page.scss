@@ -8,6 +8,7 @@ $shop-item-image: 128px;
   img {
     width: $shop-item-image;
     height: $shop-item-image;
+    object-fit: cover;
   }
   .btn {
     background-color: #1c1c1c;
@@ -95,7 +96,7 @@ $shop-item-image: 128px;
   .checkout-item {
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: space-between;
     gap: 2rem;
     border-bottom: 1px solid black;
     .checkout-item-name {

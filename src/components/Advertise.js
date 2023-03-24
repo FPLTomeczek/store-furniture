@@ -6,7 +6,9 @@ const Advertise = () => {
     <section>
       <div className="advertise-container">
         <div className="info">
-          <h2>BEST CRAFTMADE FURNITURE</h2>
+          <h2>
+            <span>BEST</span> CRAFTMADE FURNITURE
+          </h2>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat
             nulla repudiandae, laborum aut, a illo natus illum ex expedita

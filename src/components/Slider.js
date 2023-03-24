@@ -1,5 +1,6 @@
 import React from "react";
 import Product from "./Product";
+import { phoneWidth } from "../constants";
 
 const Slider = ({ products, page }) => {
   let gapSize = 65;
@@ -10,6 +11,7 @@ const Slider = ({ products, page }) => {
       .getBoundingClientRect().width;
     let slider = document.getElementById("slider");
     slider.scrollLeft = slider.scrollLeft - width - gapSize;
+    console.log(window.outerWidth);
   };
 
   const slideRight = () => {
@@ -29,9 +31,12 @@ const Slider = ({ products, page }) => {
           page === "home-page" ? "home" : "single-product"
         }`}
       >
-        <div className="btn" onClick={slideLeft}>
-          <i className="fa-solid fa-arrow-left"></i>
-        </div>
+        {products.length > 5 ? (
+          <div className="btn" onClick={slideLeft}>
+            <i className="fa-solid fa-arrow-left"></i>
+          </div>
+        ) : null}
+
         <section>
           <div
             className={`products ${
@@ -51,9 +56,13 @@ const Slider = ({ products, page }) => {
             })}
           </div>
         </section>
-        <div className="btn" onClick={slideRight}>
-          <i className="fa-solid fa-arrow-right"></i>
-        </div>
+        {window.outerWidth > phoneWidth ? (
+          products.length > 5
+        ) : products.length > 1 ? (
+          <div className="btn" onClick={slideRight}>
+            <i className="fa-solid fa-arrow-right"></i>
+          </div>
+        ) : null}
       </div>
     </div>
   );

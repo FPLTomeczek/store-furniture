@@ -3,12 +3,8 @@ import { useShopContext } from "../context/ShopContext";
 import { formatPrice } from "../helpers";
 
 const ShopItemsSummary = () => {
-  const {
-    addedProducts,
-    setAddedProducts,
-    totalAmount,
-    handleSettingTotalAmount,
-  } = useShopContext();
+  const { addedProducts, setAddedProducts, handleSettingTotalAmount } =
+    useShopContext();
 
   const handleAddingRemovingProducts = (id, type) => {
     let product = addedProducts.find((product) => product.id === id);

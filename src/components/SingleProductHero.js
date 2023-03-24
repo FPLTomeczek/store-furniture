@@ -8,8 +8,9 @@ const SingleProductHero = ({ product }) => {
   const { image, name, price, id } = product;
   const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
   const [itemsAdded, setItemsAdded] = useState(1);
+  const [isItemAdded, setIsItemAdded] = useState({ type: null, value: null });
+  const [clickSwitcher, setClickSwitcher] = useState(false);
   const { setAddedProducts, addedProducts } = useShopContext();
-  console.log(addedProducts);
 
   const handleImageLoad = () => {
     setImageSize({
@@ -22,12 +23,25 @@ const SingleProductHero = ({ product }) => {
     });
   };
 
+  useEffect(() => {
+    setIsItemAdded({ type: null, value: null });
+  }, [product]);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsItemAdded({ type: false, value: null });
+    }, 3000);
+    return () => clearTimeout(timeout);
+  }, [clickSwitcher]);
+
   const handleAddingProducts = () => {
     const product = addedProducts.find((product) => product.id === id);
-    console.log(product);
+    setIsItemAdded({ type: true, value: itemsAdded });
+    setClickSwitcher(!clickSwitcher);
     if (product) {
       product.amount += itemsAdded;
       handleSettingTotalAmount(addedProducts);
+      setAddedProducts([...addedProducts]);
     } else {
       const newProducts = [
         ...addedProducts,
@@ -101,6 +115,13 @@ const SingleProductHero = ({ product }) => {
                 ADD TO CART
               </button>
             </div>
+            <span className="item-added">
+              {isItemAdded.type
+                ? isItemAdded.value > 1
+                  ? "Items added to cart"
+                  : "Item added to cart"
+                : null}
+            </span>
           </div>
         </div>
       </div>
