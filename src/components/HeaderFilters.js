@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { formatPrice } from "../helpers";
 import FilterBtns from "./FilterBtns";
+import Modal from "./Modal";
 
 const HeaderFilters = ({ filters, setFilters }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const updatePrice = (e) => {
     setFilters({ ...filters, price: Number(e.target.value) });
   };
@@ -15,6 +18,19 @@ const HeaderFilters = ({ filters, setFilters }) => {
         value={filters.name}
       />
       <FilterBtns filters={filters} setFilters={setFilters} />
+      <i
+        className="fa-solid fa-sliders"
+        onClick={() => setIsModalOpen(true)}
+      ></i>
+      {isModalOpen && (
+        <Modal
+          setIsModalOpen={setIsModalOpen}
+          filters={filters}
+          setFilters={setFilters}
+          isModalOpen={isModalOpen}
+          updatePrice={updatePrice}
+        />
+      )}
       <div className="range-price">
         <input
           type="range"

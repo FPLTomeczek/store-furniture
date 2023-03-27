@@ -251,7 +251,21 @@ $advertise-container-height: 500px;
   #newsletter-email {
     height: 30px;
     box-sizing: border-box;
-    border: none;
+    border: 2px solid black;
+    padding: 0.5rem;
     width: 280px;
+  }
+  #newsletter-email:focus {
+    outline: none;
+    border: 2px solid $secondary-color;
+    background-color: $main-color;
+  }
+}
+
+@media (max-width: $phone-width) {
+  .newsletter {
+    form {
+      flex-direction: column;
+    }
   }
 }

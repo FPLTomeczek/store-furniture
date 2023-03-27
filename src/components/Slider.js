@@ -21,6 +21,17 @@ const Slider = ({ products, page }) => {
       .getBoundingClientRect().width;
     slider.scrollLeft = slider.scrollLeft + width + gapSize;
   };
+
+  if (products.length === 0) {
+    return (
+      <div className="slider">
+        <h1>
+          {page === "home-page" ? "TOP SELLED PRODUCTS" : "SIMILAR PRODUCTS"}
+        </h1>
+        <h3 style={{ textAlign: "center" }}>... Products Not Found</h3>
+      </div>
+    );
+  }
   return (
     <div className="slider">
       <h1>
@@ -31,11 +42,22 @@ const Slider = ({ products, page }) => {
           page === "home-page" ? "home" : "single-product"
         }`}
       >
-        {products.length > 5 ? (
+        {window.outerWidth > phoneWidth ? (
+          products.length > 5 ? (
+            <div className="btn" onClick={slideLeft}>
+              <i className="fa-solid fa-arrow-left"></i>
+            </div>
+          ) : null
+        ) : products.length > 1 ? (
           <div className="btn" onClick={slideLeft}>
             <i className="fa-solid fa-arrow-left"></i>
           </div>
         ) : null}
+        {/* {products.length > 5 ? (
+          <div className="btn" onClick={slideLeft}>
+            <i className="fa-solid fa-arrow-left"></i>
+          </div>
+        ) : null} */}
 
         <section>
           <div
@@ -57,7 +79,11 @@ const Slider = ({ products, page }) => {
           </div>
         </section>
         {window.outerWidth > phoneWidth ? (
-          products.length > 5
+          products.length > 5 ? (
+            <div className="btn" onClick={slideRight}>
+              <i className="fa-solid fa-arrow-right"></i>
+            </div>
+          ) : null
         ) : products.length > 1 ? (
           <div className="btn" onClick={slideRight}>
             <i className="fa-solid fa-arrow-right"></i>

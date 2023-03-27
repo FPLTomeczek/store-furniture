@@ -3,9 +3,9 @@ import data from "../data";
 
 let filtersData = ["all", ...new Set(data.map((element) => element.type))];
 
-const FilterBtns = ({ setFilters, filters }) => {
+const FilterBtns = ({ setFilters, filters, isModalOpen }) => {
   return (
-    <div className="filter-btns">
+    <div className={`filter-btns ${isModalOpen && "modal"}`}>
       {filtersData.map((filter) => {
         return (
           <button

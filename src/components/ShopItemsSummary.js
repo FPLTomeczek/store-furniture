@@ -38,7 +38,7 @@ const ShopItemsSummary = () => {
               <div className="bg"></div>
             </div>
             <p>{name}</p>
-            <div className="add-remove-item">
+            <div className="add-remove-price-item">
               <div
                 className="btn"
                 onClick={() => handleAddingRemovingProducts(id, "remove")}

@@ -26,7 +26,7 @@ $shop-item-image: 128px;
     justify-content: center;
     align-items: center;
   }
-  .add-remove-item {
+  .add-remove-price-item {
     display: flex;
   }
   h4 {
@@ -53,6 +53,41 @@ $shop-item-image: 128px;
   }
 }
 
+@media (max-width: $phone-width) {
+  .shop-item {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-template-areas:
+      "one two"
+      "three four"
+      "five five";
+    justify-content: center;
+    .image-bg {
+      grid-area: one;
+      padding: 1rem;
+      .bg {
+        left: 25px;
+        top: 25px;
+      }
+    }
+    p {
+      grid-area: two;
+      text-align: center;
+    }
+    .add-remove-price-item {
+      grid-area: three;
+      justify-content: center;
+    }
+    h4 {
+      grid-area: four;
+    }
+    .remove-btn {
+      grid-area: five;
+    }
+  }
+}
+
 .shop-container {
   display: flex;
   .shop-items-summary {
@@ -72,6 +107,24 @@ $shop-item-image: 128px;
     flex-direction: column;
     .btn-primary:hover {
       border: 1px solid black;
+    }
+  }
+}
+
+@media (max-width: $phone-width) {
+  .shop-container {
+    flex-direction: column;
+    .shop-items-summary {
+      width: auto;
+      padding: 2rem;
+    }
+    .shop-advertise {
+      order: 3;
+      width: auto;
+    }
+    .checkout {
+      width: auto;
+      padding: 2rem;
     }
   }
 }

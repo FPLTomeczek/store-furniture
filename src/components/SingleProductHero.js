@@ -13,15 +13,18 @@ const SingleProductHero = ({ product }) => {
   const { setAddedProducts, addedProducts } = useShopContext();
 
   const handleImageLoad = () => {
-    setImageSize({
-      width: document
-        .getElementById("singleProductImage")
-        .getBoundingClientRect().width,
-      height: document
-        .getElementById("singleProductImage")
-        .getBoundingClientRect().height,
-    });
+    const image = document.getElementById("singleProductImage");
+    if (image) {
+      setImageSize({
+        width: image.getBoundingClientRect().width,
+        height: image.getBoundingClientRect().height,
+      });
+    }
   };
+  useEffect(() => {
+    const imageBg = document.querySelector(".image-bg");
+    new ResizeObserver(handleImageLoad).observe(imageBg);
+  }, []);
 
   useEffect(() => {
     setIsItemAdded({ type: null, value: null });
@@ -85,26 +88,28 @@ const SingleProductHero = ({ product }) => {
               </p>
             </div>
             <div className="cart-btns">
-              <div className="add-remove-item">
-                <div
-                  className="btn"
-                  onClick={() =>
-                    setItemsAdded((prev) => {
-                      if (prev - 1 > 0) {
-                        return prev - 1;
-                      }
-                      return prev;
-                    })
-                  }
-                >
-                  <i className="fa-solid fa-minus"></i>
-                </div>
-                <span>{itemsAdded}</span>
-                <div
-                  className="btn"
-                  onClick={() => setItemsAdded((prev) => prev + 1)}
-                >
-                  <i className="fa-solid fa-plus"></i>
+              <div className="add-remove-price-item">
+                <div className="add-remove">
+                  <div
+                    className="btn"
+                    onClick={() =>
+                      setItemsAdded((prev) => {
+                        if (prev - 1 > 0) {
+                          return prev - 1;
+                        }
+                        return prev;
+                      })
+                    }
+                  >
+                    <i className="fa-solid fa-minus"></i>
+                  </div>
+                  <span>{itemsAdded}</span>
+                  <div
+                    className="btn"
+                    onClick={() => setItemsAdded((prev) => prev + 1)}
+                  >
+                    <i className="fa-solid fa-plus"></i>
+                  </div>
                 </div>
                 <span className="price">{formatPrice(price * itemsAdded)}</span>
               </div>
