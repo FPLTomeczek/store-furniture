@@ -49,7 +49,18 @@ $advertise-container-height: 500px;
     color: white;
     font-size: 2rem;
   }
-
+  @media (max-width: $phone-width) {
+    h2 {
+      right: 0px;
+      margin: 0;
+    }
+    .sofa-heading {
+      bottom: 20px;
+    }
+    .chair-heading {
+      left: 0;
+    }
+  }
   img {
     width: 100%;
     height: 100%;
