@@ -11,7 +11,6 @@ const Slider = ({ products, page }) => {
       .getBoundingClientRect().width;
     let slider = document.getElementById("slider");
     slider.scrollLeft = slider.scrollLeft - width - gapSize;
-    console.log(window.outerWidth);
   };
 
   const slideRight = () => {

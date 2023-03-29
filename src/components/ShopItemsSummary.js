@@ -15,14 +15,12 @@ const ShopItemsSummary = () => {
         product.amount -= 1;
       }
     }
-    console.log(product);
     setAddedProducts([...addedProducts]);
     handleSettingTotalAmount(addedProducts);
   };
 
   const removeItem = (id) => {
     const newProducts = addedProducts.filter((product) => product.id !== id);
-    console.log(newProducts);
     setAddedProducts(newProducts);
     handleSettingTotalAmount(newProducts);
   };
