@@ -1,5 +1,6 @@
 import React from "react";
 import adv from "../images/adv.jpg";
+import { Link } from "react-router-dom";
 
 const Advertise = () => {
   return (
@@ -26,7 +27,9 @@ const Advertise = () => {
             Repellendus, soluta rem! Sequi culpa amet officiis dolorem, fuga
             nemo!
           </p>
-          <button className="btn-primary">Shop Now</button>
+          <Link to="/products">
+            <button className="btn-primary">Shop Now</button>\
+          </Link>
         </div>
         <div className="advertise-img">
           <img src={adv} alt="advertise" />

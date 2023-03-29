@@ -5,4 +5,4 @@ User can pick between various types of the home furniture.
 
 ## Deployment
 
-to be done
+[https://mammonous-furniture.netlify.app](https://mammonous-furniture.netlify.app)
