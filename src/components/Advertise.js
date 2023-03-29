@@ -28,7 +28,7 @@ const Advertise = () => {
             nemo!
           </p>
           <Link to="/products">
-            <button className="btn-primary">Shop Now</button>\
+            <button className="btn-primary">Shop Now</button>
           </Link>
         </div>
         <div className="advertise-img">
